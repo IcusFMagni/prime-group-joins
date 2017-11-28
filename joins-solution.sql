@@ -29,7 +29,7 @@ SELECT COUNT(p.id) from products p;
 
 -- What is the total available on-hand quantity of diet pepsi?
 
-SELECT COUNT(p.id) FROM warehouse w 
+SELECT COUNT(w_p.on_hand) FROM warehouse w 
 JOIN warehouse_product w_p ON w.id=w_p.warehouse_id
 JOIN products p ON p.id=w_p.product_id
 WHERE p.description = 'diet pepsi';
